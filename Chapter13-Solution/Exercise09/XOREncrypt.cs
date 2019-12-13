@@ -9,7 +9,7 @@ namespace Exercise09
     /// of the text and the second letter of the code, etc. until the last letter of the code, then goes back to the first letter of the code
     /// and the next letter of the text. Print the result as a series of Unicode escape characters \xxxx.
     /// </summary>
-    internal class Program
+    internal class XOREncrypt
     {
         private static void Main(string[] args)
         {

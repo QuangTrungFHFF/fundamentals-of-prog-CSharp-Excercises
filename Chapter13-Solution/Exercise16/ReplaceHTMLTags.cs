@@ -15,6 +15,7 @@ namespace Exercise16
             newText = Regex.Replace(newText, @""">", "]");
             newText = Regex.Replace(newText, @"</a>", "[/URL]");
             Console.WriteLine(newText);
+            Console.ReadKey();
         }
     }
 }

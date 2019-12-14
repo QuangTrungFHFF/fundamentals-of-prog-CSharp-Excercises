@@ -11,7 +11,7 @@ namespace Exercise15
     internal class Dictionary
     {
         private static Dictionary<string, string> dictionary = new Dictionary<string, string>()
-        {
+        {            
             {"Apple","A round fruit with firm, white flesh and a green, red, or yellow skin." },
             {"Durian","A large, oval, tropical fruit with a hard skin covered in sharp points, yellow, orange, or red flesh, and a very strong smell." },
             {"Orange","A round sweet fruit that has a thick orange skin and an orange centre divided into many parts" }
@@ -22,9 +22,9 @@ namespace Exercise15
             string word = String.Empty;
             while (!word.Equals("/Q"))
             {
-                Console.WriteLine(@"Please enter a word to begin search!");
+                Console.WriteLine("Please enter a word to begin search! Type \"N\" to quit app!");
                 word = Console.ReadLine();
-                while (!dictionary.ContainsKey(word) && !word.Equals("//Q"))
+                while (!dictionary.ContainsKey(word) && !word.Equals("N"))
                 {
                     Console.WriteLine("Word not found! Do you want to add {0} to the Dictionary? (Y/N)", word);
                     if (Console.ReadLine() == "Y")
@@ -32,12 +32,35 @@ namespace Exercise15
                         Console.WriteLine("Please enter the explanation for {0}.", word);
                         CreateNewEntry(word, Console.ReadLine());
                     }
-                    Console.WriteLine("Please enter a word to begin search!");
+                    else if(Console.ReadLine() == "N")
+                    {
+                        Console.WriteLine(@"Please enter a word to begin search!");
+                        word = Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Input!");
+                        break;
+                    }
+                    
+                }
+                try
+                {
+                    Console.WriteLine("Search result: {0} - {1}", word, dictionary[word]);
+                    Console.WriteLine(@"Do you want to continue? (Y/N)");
                     word = Console.ReadLine();
                 }
-                Console.WriteLine("Search result: {0} - {1}", word, dictionary[word]);
-                Console.WriteLine(@"Do you want to continue? (Y/N)");
-                word = Console.ReadLine();
+                catch(KeyNotFoundException)
+                {
+                    word = "N";
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("There is an error while searching!");
+                }
+                
+                
+                
                 while (!word.Equals("Y") && !word.Equals("N"))
                 {
                     Console.WriteLine(@"Invalid input. Do you want to continue? (Y/N)");

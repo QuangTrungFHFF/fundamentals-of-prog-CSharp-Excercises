@@ -8,7 +8,7 @@ namespace Exercise11
     /// 11. A string is given, composed of several "forbidden" words separated by commas. Also a text is given, containing those words.
     /// Write a program that replaces the forbidden words with asterisks.
     /// </summary>
-    class Program
+    class ForbiddenWords
     {
         static void Main(string[] args)
         {

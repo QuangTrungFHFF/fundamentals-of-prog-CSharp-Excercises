@@ -6,5 +6,24 @@ namespace Exercise08to19
 {
     class Battery
     {
+        private string model = null;
+        private int? hoursTalk =null;
+        private int? idleTime =null;
+        public Battery(string model, int? hoursTalk, int? idleTime)
+        {
+            this.model = model;
+            this.hoursTalk = hoursTalk;
+            this.idleTime = idleTime;
+        }
+        public Battery(string model) : this(model, null,null)
+        {
+        }
+        public Battery() 
+        {
+            this.model = null;
+            this.hoursTalk = null;
+            this.idleTime = null;
+        }
+
     }
 }

@@ -13,6 +13,8 @@ namespace Exercise08to19
     /// model iPhone11. Add a method to the same class, which displays information about this static field.
     /// Ex16 >>>> Add a property for keeping a call history – CallHistory, which holds a list of call records.
     /// Ex17 >>>> In GSM class add methods for adding and deleting calls (Call) in the archive of mobile phone calls. Add method, which deletes all calls from the archive.
+    /// Ex18 >>>> In GSM class, add a method that calculates the total amount of calls (Call) from the archive of phone calls (CallHistory), 
+    /// as the price of a phone call is passed as a parameter to the method.
     /// </summary>
     class MobilePhone
     {
@@ -179,7 +181,17 @@ namespace Exercise08to19
             {
                 result += pricePerMinute * c.DurationMinutes;
             }
-            Console.WriteLine("Total: €" + result);
+            Console.WriteLine("Total: € {0:N2}",result);
+        }
+        /// <summary>
+        /// Print call history to the screen
+        /// </summary>
+        public void GetCallHistoryInfo()
+        {
+            foreach(Call c in this.CallHistory)
+            {
+                Console.WriteLine(c.ToString());
+            }
         }
     }
 }

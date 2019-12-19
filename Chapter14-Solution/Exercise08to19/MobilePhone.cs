@@ -12,6 +12,7 @@ namespace Exercise08to19
     /// Ex10 >>>> To the class of mobile phone in the previous two tasks, add a static field nokiaN95, which stores information about mobile phone 
     /// model iPhone11. Add a method to the same class, which displays information about this static field.
     /// Ex16 >>>> Add a property for keeping a call history – CallHistory, which holds a list of call records.
+    /// Ex17 >>>> In GSM class add methods for adding and deleting calls (Call) in the archive of mobile phone calls. Add method, which deletes all calls from the archive.
     /// </summary>
     class MobilePhone
     {
@@ -125,6 +126,60 @@ namespace Exercise08to19
             info.Append(System.Environment.NewLine);
             info.Append("-------------------------------");
             return info.ToString();
+        }
+
+        /// <summary>
+        /// Add a call to call history list
+        /// </summary>
+        /// <param name="callTime"></param>
+        /// <param name="duration"></param>
+        public void AddCall(DateTime callTime, int duration)
+        {
+            if(callTime != null && duration >0)
+            {
+                this.CallHistory.Add(new Call(callTime,duration));
+            }
+            else
+            {
+                Console.WriteLine("There is no call to add!");
+            }
+        }
+        /// <summary>
+        /// Delete a call
+        /// </summary>
+        /// <param name="call"></param>
+        public void DeleteCall(Call call)
+        {
+            if(CallHistory.Contains(call))
+            {
+                CallHistory.Remove(call);
+            }
+            else
+            {
+                Console.WriteLine("Call is not on history list!");
+            }
+        }
+        /// <summary>
+        /// Delete all calls history
+        /// </summary>
+        public void DeleteAllCall()
+        {
+            CallHistory.Clear();
+            Console.WriteLine("Call History cleared!");
+        }
+
+        /// <summary>
+        /// Calculate total bill from Call History and Price per Minute
+        /// </summary>
+        /// <param name="pricePerMinute"></param>
+        public void BillCalculator(double pricePerMinute)
+        {
+            double result = 0;
+            foreach(Call c in CallHistory)
+            {
+                result += pricePerMinute * c.DurationMinutes;
+            }
+            Console.WriteLine("Total: €" + result);
         }
     }
 }

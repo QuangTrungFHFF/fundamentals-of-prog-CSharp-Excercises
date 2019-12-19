@@ -10,6 +10,14 @@ namespace Exercise08to19
     {
         private DateTime startTime = new DateTime();
         private TimeSpan duration = new TimeSpan();
+        private DateTime callTime;
+
+        public Call(DateTime callTime, int duration)
+        {
+            this.callTime = callTime;
+            this.duration = new TimeSpan(0,0,duration);
+        }
+
         public DateTime StartTime
         {
             get { return this.startTime; }

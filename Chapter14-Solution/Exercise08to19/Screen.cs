@@ -8,6 +8,28 @@ namespace Exercise08to19
     {
         private double size = 0;
         private string colours = null;
+        public double Size
+        {
+            get
+            {
+                return this.size;
+            }
+            set
+            {
+                this.size = value;
+            }
+        }
+        public string Colours
+        {
+            get
+            {
+                return this.colours;
+            }
+            set
+            {
+                this.colours = value;
+            }
+        }        
         public Screen()
         {
             this.size = 0;

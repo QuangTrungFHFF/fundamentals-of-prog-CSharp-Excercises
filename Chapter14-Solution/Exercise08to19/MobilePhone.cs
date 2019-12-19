@@ -20,7 +20,36 @@ namespace Exercise08to19
         private string owner = null;
         private Battery battery;
         private Screen screen;
-
+        public string Model
+        {
+            get { return this.model; }
+            set { this.model = value; }
+        }
+        public string Manufacturer
+        {
+            get { return this.manufacturer; }
+            set { this.manufacturer = value; }
+        }
+        public double? Price
+        {
+            get { return this.price; }
+            set { this.price = value; }
+        }
+        public string Owner
+        {
+            get { return this.owner; }
+            set { this.owner = value; }
+        }
+        public Battery BatteryProperty
+        {
+            get { return this.battery; }
+            set { this.battery = value; }
+        }
+        public Screen Screen
+        {
+            get { return this.screen; }
+            set { this.screen = value; }
+        }
         public static MobilePhone iPhone11ProM
         {
             get
@@ -28,6 +57,7 @@ namespace Exercise08to19
                 return new MobilePhone("iPhone 11 Pro Max", "Apple", 1099, null, "Lithium - ion", 25, 80, 7.5 , "black");
             }
         }
+        
         public MobilePhone(string model, string manufacturer, double? price, string owner, string batteryModel, int? hoursTalk, int? idleTime, double screenSize, string screenColour)
         {
             this.model = model;

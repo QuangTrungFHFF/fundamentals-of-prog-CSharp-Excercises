@@ -71,5 +71,23 @@ namespace Exercise08to19
             this.battery = null;
             this.screen = null;
         }
+        public override string ToString()
+        {
+            StringBuilder info = new StringBuilder();
+            info.Append("Model name: " + model);
+            info.Append(System.Environment.NewLine);
+            info.Append("Manufacturer: " + manufacturer);
+            info.Append(System.Environment.NewLine);
+            info.Append("Price: " + price);
+            info.Append(System.Environment.NewLine);
+            info.Append("Owner: " + owner);
+            info.Append(System.Environment.NewLine);
+            info.Append("Battery info: " + battery.ToString());
+            info.Append(System.Environment.NewLine);
+            info.Append("Display: " + screen.ToString());
+            info.Append(System.Environment.NewLine);
+            info.Append("-------------------------------");
+            return info.ToString();
+        }
     }
 }

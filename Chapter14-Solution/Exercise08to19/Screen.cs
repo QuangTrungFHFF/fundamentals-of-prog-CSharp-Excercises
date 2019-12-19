@@ -18,5 +18,9 @@ namespace Exercise08to19
             this.size = size;
             this.colours = colours;
         }
+        public override string ToString()
+        {
+            return string.Format("Screen size: {0}, Screen colour: {1}", size, colours);
+        }
     }
 }

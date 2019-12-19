@@ -27,6 +27,10 @@ namespace Exercise08to19
             this.idleTime = null;
             this.batteryTypes = BatteryTypes.LiIon;
         }
+        public override string ToString()
+        {
+            return string.Format("Model: {0}, Hours talk: {1}, Idle Time: {2}.", model, hoursTalk, idleTime);
+        }
 
     }
 }

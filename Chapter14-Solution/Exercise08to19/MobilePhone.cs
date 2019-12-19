@@ -9,6 +9,8 @@ namespace Exercise08to19
     /// (model, idle time and hours talk) and features of the screen (size and colors).
     /// Ex9 >>>> Declare several constructors for each of the classes created by the previous task, which have different lists of parameters 
     /// (for complete information about a student or part of it). Data fields that are unknown have to be initialized respectively with null or 0.
+    /// Ex10 >>>> To the class of mobile phone in the previous two tasks, add a static field nokiaN95, which stores information about mobile phone 
+    /// model iPhone11. Add a method to the same class, which displays information about this static field.
     /// </summary>
     class MobilePhone
     {
@@ -18,6 +20,7 @@ namespace Exercise08to19
         private string owner = null;
         private Battery battery;
         private Screen screen;
+
         public static MobilePhone iPhone11ProM
         {
             get

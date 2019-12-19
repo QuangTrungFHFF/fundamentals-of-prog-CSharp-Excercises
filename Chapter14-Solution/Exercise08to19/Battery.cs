@@ -9,6 +9,8 @@ namespace Exercise08to19
         private string model = null;
         private int? hoursTalk =null;
         private int? idleTime =null;
+        private BatteryTypes batteryTypes; 
+        enum BatteryTypes { LiIon, NiMH, NiCd, LiPol }       
         public Battery(string model, int? hoursTalk, int? idleTime)
         {
             this.model = model;
@@ -23,6 +25,7 @@ namespace Exercise08to19
             this.model = null;
             this.hoursTalk = null;
             this.idleTime = null;
+            this.batteryTypes = BatteryTypes.LiIon;
         }
 
     }

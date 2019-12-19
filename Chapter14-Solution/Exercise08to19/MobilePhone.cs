@@ -11,6 +11,7 @@ namespace Exercise08to19
     /// (for complete information about a student or part of it). Data fields that are unknown have to be initialized respectively with null or 0.
     /// Ex10 >>>> To the class of mobile phone in the previous two tasks, add a static field nokiaN95, which stores information about mobile phone 
     /// model iPhone11. Add a method to the same class, which displays information about this static field.
+    /// Ex16 >>>> Add a property for keeping a call history – CallHistory, which holds a list of call records.
     /// </summary>
     class MobilePhone
     {
@@ -20,6 +21,12 @@ namespace Exercise08to19
         private string owner = null;
         private Battery battery;
         private Screen screen;
+        private List<Call> callHistory = new List<Call>();
+        public List<Call> CallHistory
+        {
+            get { return this.callHistory; }
+            set { this.callHistory = value; }
+        }
         public string Model
         {
             get { return this.model; }

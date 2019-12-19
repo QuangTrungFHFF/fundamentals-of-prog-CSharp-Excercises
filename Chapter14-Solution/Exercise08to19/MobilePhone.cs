@@ -108,7 +108,7 @@ namespace Exercise08to19
             info.Append(System.Environment.NewLine);
             info.Append("Manufacturer: " + manufacturer);
             info.Append(System.Environment.NewLine);
-            info.Append("Price: " + price);
+            info.Append("Price: € " + price );
             info.Append(System.Environment.NewLine);
             info.Append("Owner: " + owner);
             info.Append(System.Environment.NewLine);

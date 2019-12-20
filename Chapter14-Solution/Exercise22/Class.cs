@@ -45,7 +45,7 @@ namespace Exercise22
         }
         public void AddTeacher(string teacherName)
         {
-            Teachers.Add(new Teacher(teacherName);
+            Teachers.Add(new Teacher(teacherName));
         }
 
     }

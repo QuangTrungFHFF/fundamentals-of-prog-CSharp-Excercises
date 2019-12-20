@@ -7,7 +7,7 @@ namespace Exercise20
     /// <summary>
     /// The library must contain a name and a list of books. 
     /// </summary>
-    class Library
+    public class Library
     {
         private List<Book> bookList;
         public string Name { get; set; }
@@ -44,7 +44,7 @@ namespace Exercise20
         {
             BookList.Add(new Book(title, author));
         }
-        public void AddBook(string title, string author, string publisher, DateTime? releaseDate, string iSBN)
+        public void AddBook(string title, string author, string publisher, string releaseDate, string iSBN)
         {
             BookList.Add(new Book(title, author, publisher, releaseDate, iSBN));
         }
@@ -79,6 +79,16 @@ namespace Exercise20
                 {
                     Console.WriteLine(b.ToString());
                 }
+            }
+        }
+        /// <summary>
+        /// Print all books info in library
+        /// </summary>
+        public void PrintLibraryInfo()
+        {
+            foreach(Book b in BookList)
+            {
+                Console.WriteLine(b.ToString());
             }
         }
 

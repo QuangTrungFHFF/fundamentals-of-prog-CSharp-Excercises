@@ -8,10 +8,30 @@ namespace Exercise20
     /// </summary>
     public class Book
     {
+        private DateTime? releaseDate;
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
-        public DateTime? ReleaseDate { get; set; }
+        public string ReleaseDate
+        {
+            get
+            {
+                return releaseDate?.ToString("d");
+            }
+            set
+            {
+                if(value!=null)
+                {
+                    releaseDate = DateTime.Parse(value);
+                }
+                else
+                {
+                    releaseDate = null;
+                }
+                
+            }
+        }
+            
         public string ISBN { get; set; }
         public Book()
         {
@@ -21,7 +41,7 @@ namespace Exercise20
             ReleaseDate = null;
             ISBN = null;
         }
-        public Book(string title, string author, string publisher, DateTime? releaseDate, string iSBN)
+        public Book(string title, string author, string publisher, string releaseDate, string iSBN)
         {
             Title = title;
             Author = author;
@@ -44,7 +64,7 @@ namespace Exercise20
             info.Append(Environment.NewLine);
             info.Append("Publisher: " + Publisher);
             info.Append(Environment.NewLine);
-            info.Append("Release date: " + ReleaseDate?.ToString("d"));
+            info.Append("Release date: " + ReleaseDate);
             info.Append(Environment.NewLine);
             info.Append("ISBN: " + ISBN);
             info.Append(Environment.NewLine);

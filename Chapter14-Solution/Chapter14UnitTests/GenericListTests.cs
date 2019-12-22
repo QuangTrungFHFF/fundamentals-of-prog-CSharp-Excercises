@@ -10,7 +10,7 @@ namespace Exercise24.Tests
     [TestClass()]
     public class GenericListTests
     {
-        [TestMethod(), Description("Create new array list, add elements to the list using AddElement(), compare with expected array list")]
+        [TestMethod(), Description("Create new array list, add elements to the list using AddElement() to the max capacity, then insert 1 more, compare with expected array list")]
         public void AddElementTest()
         {
             //Arrange
@@ -24,6 +24,24 @@ namespace Exercise24.Tests
             intergerArray.AddElement(99);
             intergerArray.AddElement(100);
             intergerArray.AddElement(101);
+            //Assert
+            CollectionAssert.AreEqual(expectedResult, intergerArray.ElementList);
+        }
+
+        [TestMethod(), Description("Create new array list, add elements to the list using AddElement() to the max capacity, then insert 1 more element at index 3, compare with expected array list")]
+        public void InsertElementAtGivenIndexTest()
+        {
+            //Arrange
+            int[] expectedResult = new int[7] { 21, 22, 23, 98, 99, 100, 101 };
+            GenericList<int> intergerArray = new GenericList<int>(6);
+            //Act
+            intergerArray.AddElement(21);
+            intergerArray.AddElement(22);
+            intergerArray.AddElement(23);            
+            intergerArray.AddElement(99);
+            intergerArray.AddElement(100);
+            intergerArray.AddElement(101);
+            intergerArray.InsertElementAtGivenIndex(98, 3);
             //Assert
             CollectionAssert.AreEqual(expectedResult, intergerArray.ElementList);
         }

@@ -11,13 +11,39 @@ namespace Exercise23
 {
     public class GenericList<T>
     {
-        private T[] elementList;        
+        private const int _defaultCapacity = 4;
+        private T[] elementList; 
+        
+        public T[] ElementList
+        {
+            get { return elementList; }
+            set { elementList = value; }
+        }
         public int Capacity { get; set; } 
         public int Count { get; set; }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="capacity"></param>
         public GenericList(int capacity)
         {
-            Capacity = capacity;
+            if(capacity < _defaultCapacity)
+            {
+                Capacity = _defaultCapacity;
+            }
+            else
+            {
+                Capacity = capacity;
+            }            
             elementList = new T[Capacity];
+            Count = 0;
+        }
+        /// <summary>
+        /// Default List of array
+        /// </summary>
+        public GenericList()
+        {
+            elementList = new T[_defaultCapacity];
             Count = 0;
         }
         public override string ToString()
@@ -112,6 +138,26 @@ namespace Exercise23
                 }
                 elementList[Capacity - 1] = default(T);
                 
+            }
+        }
+        /// <summary>
+        /// Insert an Element at Given Index
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="index"></param>
+        public void InsertElementAtGivenIndex(T element, int index)
+        {
+            if(Count >= Capacity)
+            {
+                Console.WriteLine("Max Capacity reached! Cannot insert new element!");
+            }
+            else
+            {
+                for(int i = (Capacity-1); i>index;i--)
+                {
+                    elementList[i] = elementList[i - 1];
+                }
+                elementList[index] = element;
             }
         }
         public void ClearList()

@@ -23,6 +23,15 @@ namespace Exercise25
         {
             Set(numerator, denominator);
         }
+        public override string ToString()
+        {
+            return string.Format($"{Numerator}/{Denominator}");
+        }
+        /// <summary>
+        /// Set numerator and denominator
+        /// </summary>
+        /// <param name="numerator"></param>
+        /// <param name="denominator"></param>
         public void Set(int numerator, int denominator)
         {
             if(denominator ==0)
@@ -39,7 +48,7 @@ namespace Exercise25
         /// Parse string input to Fraction
         /// </summary>
         /// <param name="stringFraction"></param>
-        public static void Parse(string stringFraction)
+        public static Fraction Parse(string stringFraction)
         {
             int numerator;
             int denominator;
@@ -56,7 +65,7 @@ namespace Exercise25
 
             if (int.TryParse(stringFractionArray[0],out numerator)&&int.TryParse(stringFractionArray[1],out denominator))
             {
-                new Fraction(numerator, denominator);
+                return new Fraction(numerator, denominator);
             }
             else
             {

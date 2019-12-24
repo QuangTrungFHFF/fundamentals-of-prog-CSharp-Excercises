@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise25
+namespace Exercise27
 {
     /// <summary>
     /// Define a class Fraction, which contains information about the rational fraction (e.g. ¼ or ½). 
@@ -72,5 +72,34 @@ namespace Exercise25
                 throw new FormatException("Wrong format of fraction! Numerator and denominator must be both interger number!");
             }
         }
+
+        public static Fraction FractionCancel(Fraction x)
+        {            
+            int gcd = GCD(Math.Abs(x.Numerator), Math.Abs(x.Denominator));
+            return new Fraction(x.Numerator / gcd,x.Denominator/gcd);
+        }
+
+        /// <summary>
+        /// Using Euclid's algorithm to calculate GCD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int GCD(int a,int b)
+        {
+            while(a!=0&&b!=0)
+            {
+                if (a>b)
+                {
+                    a %= b;
+                }
+                else
+                {
+                    b %= a;
+                }
+            }
+            return (a == 0) ? b : a;
+        }
+
     }
 }

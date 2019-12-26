@@ -10,8 +10,8 @@ namespace Exercise03
     {
         private static void Main(string[] args)
         {
-            string sourceName = "Exercise03.txt";
-            string tempName = "Exercise03temp.txt";
+            string sourceName = "Exercise08.txt";
+            string tempName = "Exercise08temp.txt";
             string baseFolder = Path.GetFullPath(@"..\..\..\..\") + @"Textfiles\";
             string sourceFile = Path.Combine(baseFolder, sourceName);
             string tempFile = Path.Combine(baseFolder, tempName);

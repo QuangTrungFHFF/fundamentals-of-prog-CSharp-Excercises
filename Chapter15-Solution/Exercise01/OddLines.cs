@@ -6,7 +6,7 @@ namespace Exercise01
     /// <summary>
     /// Write a program that reads a text file and prints its odd lines on the console.
     /// </summary>
-    internal class Program
+    internal class OddLines
     {
         private static void Main(string[] args)
         {
@@ -15,15 +15,15 @@ namespace Exercise01
             string fileName = "Exercise01.txt";
             Console.WriteLine("Reads a text file \"Exercise01.txt\"and prints its odd lines on the console.");
             try
-            {                
+            {
                 using (StreamReader streamReader = new StreamReader(fileName))
                 {
-                    int lineCount=0;
+                    int lineCount = 0;
                     string line;
-                    while ((line = streamReader.ReadLine())!= null)
+                    while ((line = streamReader.ReadLine()) != null)
                     {
                         lineCount++;
-                        if((lineCount%2) !=0)
+                        if ((lineCount % 2) != 0)
                         {
                             Console.WriteLine(line);
                         }
@@ -38,11 +38,10 @@ namespace Exercise01
             {
                 Console.Error.WriteLine($"Invalid directry in the file path: {path}{fileName}");
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 Console.Error.WriteLine($"Cannot read the file {fileName}." + ex.Message);
             }
-            
         }
     }
 }

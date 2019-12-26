@@ -1,0 +1,14 @@
+Line 1: Asus TUF VG27AQ
+Line 2: The Asus TUF VG27AQ is the best gaming monitor that we've tested so far. It's a 27 inch, 1440p monitor with a 144Hz refresh rate that can be overclocked to 165Hz.
+Line 3: Physically, Asus has largely kept the same design as their other gaming monitors, with its clean design and excellent ergonomics.
+Line 4: The monitor allows for all manner of adjustments, including rotation into portrait mode.
+Line 5: The outstanding feature of this monitor is motion handling.
+Line 6: It has excellent response time, low input lag, and an optional black frame insertion feature to further reduce blur.
+Line 7: FreeSync variable refresh rate is also present, but if you have a recent NVIDIA graphics card, it will work as well.
+Line 1: LG 27GL83A-B
+Line 2: The LG 27GL83A-B is a good 1440p IPS monitor with great gaming performance.
+Line 3: It has a remarkably fast response time that delivers fast-moving content with almost no blur trail, and an outstanding low input lag for very responsive gaming sessions.
+Line 4: Also, this monitor supports FreeSync variable refresh rate technology and is G-SYNC compatible, offering a nearly tear-free gaming experience.
+Line 5: The outstanding feature of this monitor is motion handling.
+Line 6: The LG 27GL83A-B can get fairly bright, suitable for most rooms, and supports HDR, although it can't get very bright in that mode.
+Line 7: Unfortunately, this monitor can't display deep blacks in a dark room due to the low contrast ratio, so it's not a good choice for late-night gaming.

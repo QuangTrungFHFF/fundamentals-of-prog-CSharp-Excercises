@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Exercise04
 {
+    /// <summary>
+    /// Write a program that compares two text files with the same number of rows line by line and prints the number of equal and the number of different lines.
+    /// </summary>
     internal class CompareLines
     {
         private static void Main(string[] args)

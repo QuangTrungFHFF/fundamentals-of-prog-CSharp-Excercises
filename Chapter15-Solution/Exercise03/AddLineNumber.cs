@@ -6,15 +6,15 @@ namespace Exercise03
     /// <summary>
     /// Write a program that reads the contents of a text file and inserts the line numbers at the beginning of each line, then rewrites the file contents.
     /// </summary>
-    class AddLineNumber
+    internal class AddLineNumber
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string sourceName = "Exercise03.txt";
             string tempName = "Exercise03temp.txt";
             string baseFolder = Path.GetFullPath(@"..\..\..\..\") + @"Textfiles\";
-            string sourceFile = Path.Combine(baseFolder, sourceName );
-            string tempFile = Path.Combine(baseFolder,tempName);            
+            string sourceFile = Path.Combine(baseFolder, sourceName);
+            string tempFile = Path.Combine(baseFolder, tempName);
             try
             {
                 using (StreamReader streamReader = new StreamReader(sourceFile))
@@ -22,7 +22,7 @@ namespace Exercise03
                 {
                     string line;
                     int lineCount = 0;
-                    while((line = streamReader.ReadLine())!= null)
+                    while ((line = streamReader.ReadLine()) != null)
                     {
                         lineCount++;
                         streamWriter.WriteLine(InsertLineNumber(line, lineCount));
@@ -38,7 +38,7 @@ namespace Exercise03
             {
                 Console.Error.WriteLine("Invalid folder path!");
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 Console.Error.WriteLine("Cannot read/write the file!" + ex.Message);
             }
@@ -52,7 +52,7 @@ namespace Exercise03
         /// <param name="content">Content of the line</param>
         /// <param name="lineCount"></param>
         /// <returns></returns>
-        public static string InsertLineNumber(string content,int lineCount)
+        public static string InsertLineNumber(string content, int lineCount)
         {
             return string.Format($"Line {lineCount}: {content}");
         }

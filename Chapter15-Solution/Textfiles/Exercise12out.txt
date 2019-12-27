@@ -1,0 +1,7 @@
+ :  TUF VG27AQ
+ 2: The  TUF VG27AQ is the best gaming monitor that we've tested so far. It's a 27 inch, 1440p monitor with a 144Hz refresh rate that can be overclocked to 165Hz.
+ 3: Physically,  has largely kept the same design as their other gaming monitors, with its clean design and excellent ergonomics.
+ 4: The monitor allows for all manner of adjustments, including rotation into portrait mode.
+ 5: The outstanding feature of this monitor is motion handling.
+ 6:  has excellent response time, low input lag, and an optional black frame insertion feature to further reduce blur.
+ 7: FreeSync variable refresh rate is also present, but if you have a recent NVIDIA graphics card,  will work as .

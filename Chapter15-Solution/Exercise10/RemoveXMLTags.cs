@@ -15,7 +15,7 @@ namespace Exercise10
             string sourceFolder = Path.GetFullPath(@"..\..\..\..\") + @"Textfiles\";
             string sourceFile = Path.Combine(sourceFolder, "Exercise10.txt");
             string outputFile = Path.Combine(sourceFolder, "Exercise10out.txt");
-            string content = string.Empty; ;
+            string content = string.Empty;
             var contentWithoutTags = new List<string>();
             try
             {

@@ -1,0 +1,5 @@
+Key = "line", Value = 7
+Key = "Asus", Value = 3
+Key = "it", Value = 2
+Key = "well", Value = 1
+Key = "1", Value = 1

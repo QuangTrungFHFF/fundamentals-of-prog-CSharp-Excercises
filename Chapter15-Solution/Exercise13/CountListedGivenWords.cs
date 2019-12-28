@@ -6,9 +6,8 @@ using System.Linq;
 namespace Exercise13
 {
     /// <summary>
-    /// A text file words.txt is given, containing a list of words, one per line.
-    /// Write a program that deletes in the file text.txt all the words that occur in the other file.
-    /// Catch and handle all possible exceptions.
+    /// Write a program that reads a list of words from a file called words.txt, counts how many times each of these words is found in another file text.txt,
+    /// and records the results in a third file – result.txt, but before that, sorts them by the number of occurrences in descending order.
     /// </summary>
     internal class RemoveListedGivenWords
     {
@@ -29,7 +28,7 @@ namespace Exercise13
             {
                 WordList.Add(line, 0);
             }
-            //Read the source text file and delete all words that occur in wordList
+            //Read the source text file and count all words that occur in wordList
             using StreamReader sourceFileReader = new StreamReader(sourceFile);
             using StreamWriter outputFileWriter = new StreamWriter(outputFile, false);
             while ((line = sourceFileReader.ReadLine()) != null)
@@ -42,8 +41,8 @@ namespace Exercise13
             }
 
             WordList = CountWords(content, WordList);
+            //Sort and write result to new file
             WordList = SortByValue(WordList);
-
             foreach (KeyValuePair<string, int> word in WordList)
             {
                 outputFileWriter.WriteLine(string.Format("Key = \"{0}\", Value = {1}", word.Key, word.Value));
@@ -66,7 +65,7 @@ namespace Exercise13
                 int count = 0;
                 foreach (string s in text)
                 {
-                    if (s.Equals(key,StringComparison.OrdinalIgnoreCase))
+                    if (s.Equals(key, StringComparison.OrdinalIgnoreCase))
                     {
                         count++;
                     }
@@ -75,12 +74,13 @@ namespace Exercise13
             }
             return WordToCount;
         }
+
         /// <summary>
         /// Sort the dictionary
         /// </summary>
         /// <param name="WordToCount"></param>
         /// <returns></returns>
-        public static Dictionary<string,int> SortByValue(Dictionary<string,int> WordToCount)
+        public static Dictionary<string, int> SortByValue(Dictionary<string, int> WordToCount)
         {
             var sortedDictionary = WordToCount.OrderByDescending(v => v.Value);
             return sortedDictionary.ToDictionary(k => k.Key, v => v.Value);

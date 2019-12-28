@@ -24,9 +24,9 @@ namespace Exercise06
         {
             var removeNumberList = GetOddCountList(numberList);
             var resultList = new List<int>();
-            for(int i =0; i< numberList.Count;i++)
+            for (int i = 0; i < numberList.Count; i++)
             {
-                if(!removeNumberList.Contains(numberList[i]))
+                if (!removeNumberList.Contains(numberList[i]))
                 {
                     resultList.Add(numberList[i]);
                 }
@@ -34,6 +34,11 @@ namespace Exercise06
             return resultList;
         }
 
+        /// <summary>
+        /// Get a list of numbers with odd count
+        /// </summary>
+        /// <param name="numberList"></param>
+        /// <returns></returns>
         public static List<int> GetOddCountList(List<int> numberList)
         {
             var checkList = numberList.ToList();
@@ -62,6 +67,5 @@ namespace Exercise06
             }
             return numbersWithOddCount;
         }
-        
     }
 }

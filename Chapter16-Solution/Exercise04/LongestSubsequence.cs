@@ -7,7 +7,7 @@ namespace Exercise04
     /// Write a method that finds the longest subsequence of equal numbers in a given List<int> and returns the result as new List<int>.
     /// Write a program to test whether the method works correctly.
     /// </summary>
-    internal class Program
+    internal class LongestSubsequence
     {
         private static void Main(string[] args)
         {

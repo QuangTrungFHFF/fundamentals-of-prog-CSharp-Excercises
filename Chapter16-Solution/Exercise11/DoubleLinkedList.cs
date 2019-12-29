@@ -64,16 +64,22 @@ namespace Exercise11
         /// </summary>
         public void RemoveFirst()
         {
-            if (First == null)
+            if (Count == 0)
             {
                 Console.WriteLine("List is empty!");
+            }
+            else if (Count == 1)
+            {
+                First = null;
+                Last = null;
+                Count = 0;
             }
             else
             {
                 First = First.Next;
                 First.Previous = null;
+                Count--;
             }
-            Count--;
         }
 
         /// <summary>
@@ -81,16 +87,22 @@ namespace Exercise11
         /// </summary>
         public void RemoveLast()
         {
-            if (Last == null)
+            if (Count == 0)
             {
                 Console.WriteLine("List is empty!");
+            }
+            else if (Count == 1)
+            {
+                First = null;
+                Last = null;
+                Count = 0;
             }
             else
             {
                 Last = Last.Previous;
                 Last.Next = null;
+                Count--;
             }
-            Count--;
         }
 
         /// <summary>
@@ -128,6 +140,7 @@ namespace Exercise11
                 }
             }
         }
+
         /// <summary>
         /// Find the first element with the given value
         /// </summary>
@@ -175,7 +188,7 @@ namespace Exercise11
                 {
                     currentNode = currentNode.Next;
                     currentIndex++;
-                }                                               
+                }
                 newNode.Previous = currentNode.Previous;
                 currentNode.Previous.Next = newNode;
                 currentNode.Previous = newNode;
@@ -251,9 +264,7 @@ namespace Exercise11
             T[] result = new T[Count];
             for (int i = 0; i < Count; i++)
             {
-                
                 result[i] = currentNode.Value;
-                               
 
                 currentNode = currentNode.Next;
             }

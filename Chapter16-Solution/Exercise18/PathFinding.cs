@@ -1,154 +1,181 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Exercise18
 {
-    class PathFinding
+    internal class PathFinding
     {
-        public HashSet<Point> markedPoints = new HashSet<Point>();
-        public HashSet<Point> MarkedPoint
-        {
-            get { return markedPoints; }
-        }  
         public string[,] Matrix { get; set; }
         public Point StartPoint { get; set; }
+
         public PathFinding(string[,] matrix)
         {
             Matrix = matrix;
         }
+        
+
         public string[,] MarkMatrix()
-        {
-            string[,] matrix = Matrix;
+        {            
+            //Using BFS to mark nodes
             Queue<Point> paths = new Queue<Point>();
-            int count = 0;
+            int distance = 0;
             FindStartPoint();
-            Point currentPoint = StartPoint;
+            Point currentPoint;
             List<Point> neighbors;
             paths.Enqueue(StartPoint);
-            Console.WriteLine(StartPoint.X);
-            Console.WriteLine(StartPoint.Y);
-            markedPoints.Add(new Point(StartPoint.X, StartPoint.Y));
-            
-            while(paths.Count>0)
+            Matrix[StartPoint.X, StartPoint.Y] = "S";
+            while (paths.Count > 0)
             {
+                distance++;
                 currentPoint = paths.Dequeue();
-                matrix[currentPoint.X, currentPoint.Y] = "e";
-                Console.WriteLine(Matrix[currentPoint.X, currentPoint.Y]);
+                if (Matrix[currentPoint.X, currentPoint.Y] != "S")
+                {
+                    Matrix[currentPoint.X, currentPoint.Y] = currentPoint.Distance.ToString();
+                }
+
                 neighbors = GetPassableNeighbors(currentPoint);
-                foreach(Point p in neighbors)
+                foreach (Point p in neighbors)
                 {
                     paths.Enqueue(p);
-                    markedPoints.Add(p); 
                 }
             }
-            return matrix;
-
-
-        }
-        public void FindStartPoint()
-        {
-             
-            for(int row = 0; row < Matrix.GetLength(0);row++)
+            //Find leftover (unreachable) node
+            for (int row = 0; row < Matrix.GetLength(0); row++)
             {
-                for(int column = 0; column<Matrix.GetLength(1);column++)
+                for (int column = 0; column < Matrix.GetLength(1); column++)
                 {
-                    if(Matrix[row,column].Equals("a"))
+                    if (Matrix[row, column].Equals("0"))
                     {
-                        StartPoint = new Point(row, column);                        
+                        Matrix[row, column] = "u";
                     }
                 }
             }
-            
-            
+            return Matrix;
         }
+
+        /// <summary>
+        /// Find start point of the matrix
+        /// </summary>
+        public void FindStartPoint()
+        {
+            for (int row = 0; row < Matrix.GetLength(0); row++)
+            {
+                for (int column = 0; column < Matrix.GetLength(1); column++)
+                {
+                    if (Matrix[row, column].Equals("a"))
+                    {
+                        StartPoint = new Point(row, column, 0);
+                    }
+                }
+            }
+        }
+        
+
+        /// <summary>
+        /// Get all passable nodes near the current node
+        /// </summary>
+        /// <param name="currentPoint"></param>
+        /// <returns></returns>
         public List<Point> GetPassableNeighbors(Point currentPoint)
         {
             var passablePoints = new List<Point>();
-            if(this.CheckLeft(currentPoint))
+            Point nextPoint;
+            if (this.CheckLeft(currentPoint))
             {
-                passablePoints.Add(new Point(currentPoint.X,currentPoint.Y -1));
+                nextPoint = new Point(currentPoint.X, currentPoint.Y - 1, currentPoint.Distance + 1);
+                passablePoints.Add(nextPoint);
             }
             if (this.CheckRight(currentPoint))
             {
-                passablePoints.Add(new Point(currentPoint.X, currentPoint.Y + 1));
+                nextPoint = new Point(currentPoint.X, currentPoint.Y + 1, currentPoint.Distance + 1);
+
+                passablePoints.Add(nextPoint);
             }
             if (this.CheckUp(currentPoint))
             {
-                passablePoints.Add(new Point(currentPoint.X-1, currentPoint.Y));
+                nextPoint = new Point(currentPoint.X - 1, currentPoint.Y, currentPoint.Distance + 1);
+
+                passablePoints.Add(nextPoint);
             }
             if (this.CheckDown(currentPoint))
             {
-                passablePoints.Add(new Point(currentPoint.X + 1, currentPoint.Y));
+                nextPoint = new Point(currentPoint.X + 1, currentPoint.Y, currentPoint.Distance + 1);
+
+                passablePoints.Add(nextPoint);
             }
             return passablePoints;
         }
+
+        /// <summary>
+        /// Check left node
+        /// </summary>
+        /// <param name="currentPoint"></param>
+        /// <returns></returns>
         public bool CheckLeft(Point currentPoint)
         {
-            if(currentPoint.Y==0)
+            if (currentPoint.Y == 0)
             {
                 return false;
             }
-            if(Matrix[currentPoint.X,(currentPoint.Y-1)]=="x")
+            if (Matrix[currentPoint.X, (currentPoint.Y - 1)] == "0")
             {
-                return false;
+                return true;
             }
-            if(markedPoints.Contains(currentPoint))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
+
+        /// <summary>
+        /// Check right node
+        /// </summary>
+        /// <param name="currentPoint"></param>
+        /// <returns></returns>
         public bool CheckRight(Point currentPoint)
         {
-            if (currentPoint.Y == (Matrix.GetLength(1)-1))
+            if (currentPoint.Y == (Matrix.GetLength(1) - 1))
             {
                 return false;
             }
-            if (Matrix[currentPoint.X, (currentPoint.Y + 1)] == "x")
+            if (Matrix[currentPoint.X, (currentPoint.Y + 1)] == "0")
             {
-                return false;
+                return true;
             }
-            if (markedPoints.Contains(currentPoint))
-            {
-                return false;
-            }
-            return true;
+
+            return false;
         }
+
+        /// <summary>
+        /// Check node 1 line above
+        /// </summary>
+        /// <param name="currentPoint"></param>
+        /// <returns></returns>
         public bool CheckUp(Point currentPoint)
         {
             if (currentPoint.X == 0)
             {
                 return false;
             }
-            if (Matrix[(currentPoint.X-1), currentPoint.Y] == "x")
+            if (Matrix[(currentPoint.X - 1), currentPoint.Y] == "0")
             {
-                return false;
+                return true;
             }
-            if (markedPoints.Contains(currentPoint))
-            {
-                return false;
-            }
-            return true;
+
+            return false;
         }
+        /// <summary>
+        /// Check node 1 line below
+        /// </summary>
+        /// <param name="currentPoint"></param>
+        /// <returns></returns>
         public bool CheckDown(Point currentPoint)
         {
             if (currentPoint.X == (Matrix.GetLength(0) - 1))
             {
                 return false;
             }
-            if (Matrix[(currentPoint.X+1),currentPoint.Y] == "x")
+            if (Matrix[(currentPoint.X + 1), currentPoint.Y] == "0")
             {
-                return false;
+                return true;
             }
-            if (markedPoints.Contains(currentPoint))
-            {
-                return false;
-            }
-            return true;
+            return false;
         }
-
-
     }
 }

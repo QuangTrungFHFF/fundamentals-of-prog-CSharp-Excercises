@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace Exercise18
 {
@@ -17,14 +19,15 @@ namespace Exercise18
                                                {"0","a","x","0","x","0"},
                                                {"0","x","0","0","0","0"},
                                                {"0","0","0","x","x","0"},
-                                               {"0","0","0","x","0","x"} };            
+                                               {"0","0","0","x","0","x"} };
+            
             PathFinding markedMatrix = new PathFinding(matrix);            
             string[,] newMatrix = markedMatrix.MarkMatrix(); 
             for(int i =0; i< newMatrix.GetLength(0);i++)
             {
                 for (int j = 0; j< newMatrix.GetLength(1);j++)
                 {
-                    Console.Write(newMatrix[i,j]);
+                    Console.Write(newMatrix[i,j]+ " ");
                 }
                 Console.WriteLine();
             }

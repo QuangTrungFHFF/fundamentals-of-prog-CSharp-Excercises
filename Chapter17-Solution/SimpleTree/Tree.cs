@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SimpleTree
 {
-    class Tree<T>
+    public class Tree<T>
     {
         private TreeNode<T> root;
         public Tree(T value)

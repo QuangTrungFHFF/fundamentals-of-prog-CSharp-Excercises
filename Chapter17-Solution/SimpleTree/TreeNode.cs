@@ -26,6 +26,10 @@ namespace SimpleTree
                 return this.children.Count;
             }
         }
+        public override string ToString()
+        {
+            return this.Value.ToString();
+        }
         /// <summary>
         /// Add new child to the parent node
         /// </summary>

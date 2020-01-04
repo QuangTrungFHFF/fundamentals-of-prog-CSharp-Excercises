@@ -22,21 +22,21 @@ namespace MsdnDirectedGraph
             this.Edges.Add(edge);
         }
 
-        public void AddEdge(Node from, Node to)
+        public void AddEdge(Node from, Node to,int distance)
         {
-            this.Edges.Add(new Edge(from, to));
+            this.Edges.Add(new Edge(from, to, distance));
         }
 
-        public void AddEdge(Node from, Node to, bool isTwoWay)
+        public void AddEdge(Node from, Node to,int distance, bool isTwoWay)
         {
             if (isTwoWay == true)
             {
-                this.Edges.Add(new Edge(from, to));
-                this.Edges.Add(new Edge(to, from));
+                this.Edges.Add(new Edge(from, to, distance));
+                this.Edges.Add(new Edge(to, from, distance));
             }
             else
             {
-                this.Edges.Add(new Edge(from, to));
+                this.Edges.Add(new Edge(from, to, distance));
             }
         }
 

@@ -6,6 +6,9 @@ namespace MsdnDirectedGraph
     public abstract class Node
     {
         public Graph Graph { get; internal set; }
+        public int? MinCostToStart { get; set; }
+        public Node NearestToStart { get; set; }
+        public bool Visited { get; set; }
         public List<Edge> InboundEdges
         {
             get
@@ -28,6 +31,7 @@ namespace MsdnDirectedGraph
         public Node(T value)
         {
             this.Value = value;
+            this.Visited = false;
         }
         public override string ToString()
         {

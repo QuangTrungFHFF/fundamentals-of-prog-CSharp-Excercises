@@ -39,7 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise14", "Exercise14\Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise15", "Exercise15\Exercise15.csproj", "{25D259CA-FE37-40F7-A782-BE5C3358D264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise16", "Exercise16\Exercise16.csproj", "{A72AAC2B-29BF-4F30-8A49-FE9E499EDBBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise16", "Exercise16\Exercise16.csproj", "{A72AAC2B-29BF-4F30-8A49-FE9E499EDBBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise17", "Exercise17\Exercise17.csproj", "{999694C2-6DF8-4372-A972-31A32EEB0021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsdnUnDirectedGraph", "MsdnUnDirectedGraph\MsdnUnDirectedGraph.csproj", "{AC1D74F8-16D8-4C08-BC2F-131B8B87F906}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +127,14 @@ Global
 		{A72AAC2B-29BF-4F30-8A49-FE9E499EDBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A72AAC2B-29BF-4F30-8A49-FE9E499EDBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A72AAC2B-29BF-4F30-8A49-FE9E499EDBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999694C2-6DF8-4372-A972-31A32EEB0021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999694C2-6DF8-4372-A972-31A32EEB0021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999694C2-6DF8-4372-A972-31A32EEB0021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999694C2-6DF8-4372-A972-31A32EEB0021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1D74F8-16D8-4C08-BC2F-131B8B87F906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1D74F8-16D8-4C08-BC2F-131B8B87F906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1D74F8-16D8-4C08-BC2F-131B8B87F906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1D74F8-16D8-4C08-BC2F-131B8B87F906}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

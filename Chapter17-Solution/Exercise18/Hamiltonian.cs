@@ -17,24 +17,24 @@ namespace Exercise18
         }
 
         /// <summary>
-        /// A utility function to check if the vertex v can be added at index 'pos'in the Hamiltonian Cycle constructed so far(stored in 'path[]') 
+        /// A utility function to check if the vertex v can be added at index 'pos'in the Hamiltonian Cycle constructed so far(stored in 'path[]')
         /// </summary>
         /// <param name="v"></param>
         /// <param name="pos"></param>
         /// <returns></returns>
-        public bool IsSafe(Node v,int pos)
+        public bool IsSafe(Node v, int pos)
         {
             bool isAdj = false;
             bool isAdded = false;
-            //Check if this vertex is an adjacent vertex of the previously added vertex.
-            foreach(Edge adj in v.Edges)
+            //Check if this node and the previously added vertex are connected.
+            foreach (Edge adj in v.Edges)
             {
-                if(adj.Neighbor.Contains(Path[pos-1]))
+                if (adj.Neighbor.Contains(Path[pos - 1]))
                 {
                     isAdj = true;
                 }
             }
-            // Check if the vertex has already been included. This step can be optimized by creating an array of size V
+            // Check if the node has already been added to the path.
             for (int i = 0; i < pos; i++)
             {
                 if (Path[i] == v)
@@ -42,7 +42,8 @@ namespace Exercise18
                     isAdded = true;
                 }
             }
-            if(isAdj&&!isAdded)
+            //If a node is adj with previous node and not already in the path, then it's safe to add
+            if (isAdj && !isAdded)
             {
                 return true;
             }
@@ -51,18 +52,18 @@ namespace Exercise18
                 return false;
             }
         }
+
         /// <summary>
-        /// A recursive utility function to solve hamiltonian cycle problem
+        /// A recursive method function to solve hamiltonian cycle problem
         /// </summary>
         /// <returns></returns>
-        bool HamiltonianCycleUtil(int pos)
+        private bool HamiltonianCycleUtil(int pos)
         {
-            // base case: If all vertices are included in Hamiltonian Cycle 
-            if(pos == Size)
+            //If all nodes of the graph are added in the path
+            if (pos == Size)
             {
-                // And if there is an edge from the last included 
-                // vertex to the first vertex 
-                foreach (Edge adj in Path[pos-1].Edges)
+                // Check if this Halminton path is a Halminton Cycle (check if first node and last node share an edge
+                foreach (Edge adj in Path[pos - 1].Edges)
                 {
                     if (adj.Neighbor.Contains(Path[0]))
                     {
@@ -74,54 +75,48 @@ namespace Exercise18
                     }
                 }
             }
-            // Try different vertices as a next candidate in 
-            // Hamiltonian Cycle. We don't try for 0 as we 
-            // included 0 as starting point in hamCycle()
-            for(int v =1; v<Size; v++)
+            // Node 0 always in the first pos of the path. Try to add the next node to the path
+            for (int v = 1; v < Size; v++)
             {
-                /* Check if this vertex can be added to Hamiltonian Cycle */
-                if(this.IsSafe(Graph.Nodes[v],pos))
+                // Check if this node can be added to the path
+                if (this.IsSafe(Graph.Nodes[v], pos))
                 {
                     Path[pos] = Graph.Nodes[v];
 
-                    /* recur to construct rest of the path */
-                    if(HamiltonianCycleUtil(pos+1) == true)
+                    // Construct rest of the path
+                    if (HamiltonianCycleUtil(pos + 1) == true)
                     {
                         return true;
                     }
-                    /* If adding vertex v doesn't lead to a solution, then remove it */
+                    // If there's no solution found after adding a node, then remove that node and try again
                     Path[pos] = null;
                 }
             }
-            /* If no vertex can be added to Hamiltonian Cycle constructed so far, then return false */
+            // If this code run to this point, we failed to find a solution
             return false;
         }
-        /* This function solves the Hamiltonian Cycle problem using Backtracking. It mainly uses hamCycleUtil() to solve the problem.
-         * It returns false if there is no Hamiltonian Cycle possible, otherwise return true and prints the path.\
-         *  Please note that there may be more than one solutions, this function prints one of the feasible solutions. */
-         public void hamCycle()
+
+        // Add first node to the path. check if we can find a solution. then print the solution
+        public void hamCycle()
         {
             Path[0] = Graph.Nodes[0];
             if (HamiltonianCycleUtil(1) == false)
             {
                 Console.WriteLine("\nSolution does not exist");
-                
             }
             else
             {
                 PrintSolution();
             }
-                       
         }
-        void PrintSolution()
-        {
-            Console.WriteLine("Solution Exists: Following" +
-                            " is one Hamiltonian Cycle");
-            for (int i = 0; i < Size; i++)
-                Console.Write(" " + Path[i].ToString() + " ");
 
-            // Let us print the first vertex again 
-            //  to show the complete cycle 
+        private void PrintSolution()
+        {
+            Console.WriteLine("Found a solution!");
+            for (int i = 0; i < Size; i++)
+            {
+                Console.Write(" " + Path[i].ToString() + " ");
+            }                
             Console.WriteLine(" " + Path[0].ToString() + " ");
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace Exercise01
 {
-    class Program
+    class CountNumberOccurences
     {
         /// <summary>
         /// Write a program that counts, in a given array of integers, the number of occurrences of each integer.

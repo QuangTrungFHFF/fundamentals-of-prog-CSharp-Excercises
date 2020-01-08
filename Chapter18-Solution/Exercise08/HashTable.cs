@@ -14,7 +14,7 @@ namespace Exercise08
     /// </summary>
     /// <typeparam name="K"></typeparam>
     /// <typeparam name="T"></typeparam>
-    internal class HashTable<K, T> : IEnumerable<KeyValuePair<K, T>>
+    public class HashTable<K, T> : IEnumerable<KeyValuePair<K, T>>
     {
         private const int defaultCapacity = 16;
         private int currentCapacity;

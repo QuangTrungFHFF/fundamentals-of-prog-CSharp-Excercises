@@ -6,9 +6,9 @@ namespace Exercise10
 {
     class Sequences
     {
-        private HashSet<int> sequenceF1;
-        private HashSet<int> sequenceF2;
-        private HashSet<int> sequenceF3;
+        private HashSet<int> sequenceF1 = new HashSet<int>();
+        private HashSet<int> sequenceF2 = new HashSet<int>();
+        private HashSet<int> sequenceF3 = new HashSet<int>();
         public Sequences(int max)
         {
             this.GetF1(max);

@@ -6,7 +6,17 @@ namespace Exercise10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int max = 0;
+            Console.WriteLine("Please enter max range!");
+            string input = Console.ReadLine();
+            while(!int.TryParse(input,out max)|| max<0)
+            {
+                Console.WriteLine("Please enter an interger > 0!");
+                input = Console.ReadLine();
+            }
+            var sequence = new Sequences(max);
+            sequence.PrintResult();
+            
         }
     }
 }

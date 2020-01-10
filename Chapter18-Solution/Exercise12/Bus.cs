@@ -6,5 +6,6 @@ namespace Exercise12
 {
     class Bus
     {
+        public HashSet<int> Arrival;
     }
 }

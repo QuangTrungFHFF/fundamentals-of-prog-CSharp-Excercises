@@ -9,11 +9,21 @@ namespace Exercise12
     {
         public int Arrival { get; private set; }
         public int Departure { get; private set; }
+        public string Name { get; private set; }
+        private string[] text =new string[2];
        
-        public Bus(string arrival, string departure)
+        public Bus(string name, string arrival, string departure)
         {
+            this.Name = name;
             this.Arrival = GetArrivalTime(arrival);
             this.Departure = GetDepartureTime(departure);
+            //this is for ToString method
+            this.text[0] = arrival.Trim();
+            this.text[1] = departure.Trim();
+        }
+        public override string ToString()
+        {
+            return string.Format("Bus {0}: Arrival: {1} Departure: {2}",this.Name,this.text[0],this.text[1]);
         }
         private int GetArrivalTime(string a)
         {

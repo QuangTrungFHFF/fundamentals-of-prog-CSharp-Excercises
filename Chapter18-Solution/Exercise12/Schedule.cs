@@ -13,9 +13,21 @@ namespace Exercise12
         {
             this.Buses = new HashSet<Bus>();
         }
-        public void AddBus(string arrivalTime, string depatureTime)
+        public void AddBus(string name, string arrivalTime, string depatureTime)
         {
-            this.Buses.Add(new Bus(arrivalTime, depatureTime));                
+            this.Buses.Add(new Bus(name,arrivalTime, depatureTime));                
+        }
+        public void GetBusInRange(string range)
+        {
+            var arrivalBuses = GetBusArrival(range);
+            var departureBuses = GetBusDeparture(range);
+            arrivalBuses.IntersectWith(departureBuses);
+            Console.WriteLine("There are {0} buses that arrival and departure in the range {1}.", arrivalBuses.Count, range);
+            foreach(Bus b in arrivalBuses)
+            {
+                Console.WriteLine(b.ToString());
+            }
+
         }
         public HashSet<Bus> GetBusArrival(string r)
         {

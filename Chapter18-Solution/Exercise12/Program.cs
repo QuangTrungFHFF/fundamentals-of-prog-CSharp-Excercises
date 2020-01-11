@@ -6,7 +6,10 @@ namespace Exercise12
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string a = "11:23";
+            Bus bus = new Bus("a","s");
+            int b = bus.GetArrivalTime(a);
+            Console.WriteLine(b);
         }
     }
 }

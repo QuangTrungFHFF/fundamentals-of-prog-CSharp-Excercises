@@ -17,6 +17,10 @@ namespace Exercise05
             this.Price = price;
             this.Name = name;
         }
+        public override string ToString()
+        {
+            return string.Format("Barcode: {0} | Producer: {1} | Name: {2} | Price: ${3:N2}",Barcode.PadRight(10),Producer.PadRight(18),Name.PadRight(30),Price);
+        }
         public int CompareTo(object obj)
         {
             var that = (Product)obj;

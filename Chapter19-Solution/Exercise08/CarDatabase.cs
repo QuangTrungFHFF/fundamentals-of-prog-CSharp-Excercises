@@ -61,10 +61,12 @@ namespace Exercise08
             }
             else
             {
+                Console.WriteLine($"{list.Count} cars of brand {brand} found!");
                 foreach(Car c in list)
                 {
                     Console.WriteLine(c.ToString());
                 }
+                Console.WriteLine("");
             }
         }
         public void SearchByModel(string model)
@@ -76,10 +78,12 @@ namespace Exercise08
             }
             else
             {
+                Console.WriteLine($"{list.Count} cars of brand {model} found!");
                 foreach (Car c in list)
                 {
                     Console.WriteLine(c.ToString());
                 }
+                Console.WriteLine("");
             }
         }
         public void SearchByYear(int min, int max)
@@ -93,7 +97,8 @@ namespace Exercise08
                 }
             }
             list.Sort(delegate (Car c1, Car c2) { return c1.Year.CompareTo(c2.Year); });
-            foreach(var c in list)
+            Console.WriteLine($"{list.Count} cars with year of production between {min} and {max} found!");
+            foreach (var c in list)
             {
                 Console.WriteLine(c.ToString());
             }
@@ -108,7 +113,8 @@ namespace Exercise08
                     list.Add(c);
                 }
             }
-            list.Sort(delegate (Car c1, Car c2) { return c1.Year.CompareTo(c2.Price); });
+            list.Sort(delegate (Car c1, Car c2) { return c1.Price.CompareTo(c2.Price); });
+            Console.WriteLine($"{list.Count} cars with price between {min} and {max} found!");
             foreach (var c in list)
             {
                 Console.WriteLine(c.ToString());

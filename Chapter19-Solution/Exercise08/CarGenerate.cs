@@ -28,10 +28,10 @@ namespace Exercise08
         {
             int brand = rnd.Next(0, this.brand.Count - 1);
             int modelWord = rnd.Next(0, this.model.Count - 1);
-            string model = string.Format($"{this.model[modelWord]} {letter[rnd.Next(0,11)]}{letter[rnd.Next(0,11)]}{rnd.NextDouble()*10000}");
+            string model = string.Format($"{this.model[modelWord]} {letter[rnd.Next(0,11)]}{letter[rnd.Next(0,11)]}{rnd.Next(0,2000)}");
             int year = 1995 + rnd.Next(0, 25);
             double price = rnd.NextDouble() * 200 + rnd.NextDouble() * 500 + rnd.NextDouble() * 700 + rnd.NextDouble() * 2000 + rnd.NextDouble() * 5000;
-            string result = string.Format($"{this.brand[brand]}|{model}|{year}|{price:N2}");
+            string result = string.Format($"{this.brand[brand]}|{model}|{year}|{price:N0}");
             return result;
         }
         

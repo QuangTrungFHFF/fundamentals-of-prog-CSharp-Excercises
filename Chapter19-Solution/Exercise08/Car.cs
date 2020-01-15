@@ -19,7 +19,7 @@ namespace Exercise08
         }
         public override string ToString()
         {
-            return string.Format($"Brand: {Brand.PadLeft(12)} | Model: {Model.PadLeft(12)} | Year: {Year.ToString().PadLeft(10)} | Price: ${Price.ToString("C2").PadLeft(12)}");
+            return string.Format($"Brand: {Brand.PadLeft(12)} | Model: {Model.PadLeft(30)} | Year: {Year.ToString().PadLeft(6)} | Price: ${Price.ToString("N2").PadLeft(12)}");
         }
         public int CompareTo(object obj)
         {

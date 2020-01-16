@@ -73,6 +73,10 @@ namespace Exercise01
                 Console.WriteLine(t.ToString());
             }
         }
+        public override string ToString()
+        {
+            return this.ClassID;
+        }
 
     }
 }

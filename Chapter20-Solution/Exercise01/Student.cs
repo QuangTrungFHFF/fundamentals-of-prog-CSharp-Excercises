@@ -8,9 +8,20 @@ namespace Exercise01
     {
         public int StudentID { get; private set; }
         public string Name { get { return string.Format($"{FirstName} {LastName}"); } }
+        public List<Class> Classes { get; set; }
         public Student(string firstName,string lastName, int studentID) : base(firstName,lastName)
         {
             this.StudentID = studentID;
+            this.Classes = new List<Class>();
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Student: {Name} - {StudentID}");
+            foreach(var c in this.Classes)
+            {
+                Console.WriteLine(c.ToString());
+            }
+            Console.WriteLine("");
         }
         public override bool Equals(object obj)
         {

@@ -23,6 +23,10 @@ namespace Exercise01
         {
             this.Courses.Remove(course);
         }
+        public void ClearCourses()
+        {
+            this.Courses.Clear();
+        }
         public void PrintCourses()
         {
             Console.WriteLine($"Teacher: {Name}");

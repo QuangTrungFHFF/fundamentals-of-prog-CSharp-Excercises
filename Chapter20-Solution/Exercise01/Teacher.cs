@@ -23,6 +23,14 @@ namespace Exercise01
         {
             this.Courses.Remove(course);
         }
+        public void PrintCourses()
+        {
+            Console.WriteLine($"Teacher: {Name}");
+            foreach(var c in this.Courses)
+            {
+                Console.WriteLine(c.ToString());
+            }
+        }
         public override string ToString()
         {
             return string.Format($"Name: {Name.PadLeft(25)}");

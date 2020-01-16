@@ -8,13 +8,9 @@ namespace Exercise01
     {
         public int StudentID { get; private set; }
         public string Name { get { return string.Format($"{FirstName} {LastName}"); } }
-        public Student(string firstName,string lastName,int? age, int studentID) : base(firstName,lastName,age)
+        public Student(string firstName,string lastName, int studentID) : base(firstName,lastName)
         {
             this.StudentID = studentID;
-        }
-        public Student(string firstName, string lastName, int studentID) :this(firstName,lastName,null,studentID)
-        {
-
         }
         public override bool Equals(object obj)
         {
@@ -34,7 +30,7 @@ namespace Exercise01
         }
         public override string ToString()
         {
-            return string.Format($"Student: ID - {StudentID.ToString().PadLeft(12)} | Name - {Name.PadLeft(25)} | Age - {this.Age} ");
+            return string.Format($"Student: ID - {StudentID.ToString().PadLeft(12)} | Name - {Name.PadLeft(25)}");
         }
     }
 }

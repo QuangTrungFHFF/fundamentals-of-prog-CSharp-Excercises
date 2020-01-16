@@ -8,27 +8,17 @@ namespace Exercise01
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int? Age { get; set; }
-        public People(string firstName, string lastName, int? age)
+        public People(string firstName, string lastName)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Age = age;
-        }
-        public People(string firstName, string lastName) : this(firstName,lastName,null)
-        {
-
-        }
+        }        
 
         public int CompareTo(object obj)
         {
             var that = (People)obj;
             if(this.LastName.CompareTo(that.LastName) ==0)
-            {
-                if(this.FirstName.CompareTo(that.FirstName)==0)
-                {
-                    return this.Age.GetValueOrDefault().CompareTo(that.Age.GetValueOrDefault());
-                }
+            { 
                 return this.FirstName.CompareTo(that.FirstName);
             }
             return this.LastName.CompareTo(that.LastName);
@@ -41,12 +31,19 @@ namespace Exercise01
                 return false;
             var that = (People)obj;
             if((this.FirstName.Equals(that.FirstName,StringComparison.OrdinalIgnoreCase))
-                &&(this.LastName.Equals(that.LastName, StringComparison.OrdinalIgnoreCase)
-                &&((this.Age.GetValueOrDefault().CompareTo(that.Age.GetValueOrDefault()))==0)))
+                &&(this.LastName.Equals(that.LastName, StringComparison.OrdinalIgnoreCase)))
             {
                 return true;
             }
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = FirstName.Length + LastName.Length;
+            hash += FirstName.GetHashCode();
+            hash += LastName.GetHashCode()*2;
+            return hash;
         }
     }
 }

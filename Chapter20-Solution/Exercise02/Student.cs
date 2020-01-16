@@ -8,7 +8,7 @@ namespace Exercise02
     {
         public string Name { get { return string.Format($"{FirstName} {LastName}"); } }
         public double Mark { get; set; }
-        public Student(string firstName,string lastName, int mark) : base(firstName,lastName)
+        public Student(string firstName,string lastName, double mark) : base(firstName,lastName)
         {
             this.Mark = mark;            
         }

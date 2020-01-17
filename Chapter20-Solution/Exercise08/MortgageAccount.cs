@@ -17,7 +17,7 @@ namespace Exercise08
         }
         public override void PrintInterest(int month)
         {
-            Console.WriteLine($"After {month} month, your interest is ${CalculateInterest(month):N2}");
+            Console.WriteLine($"After {month} month, the interest is ${CalculateInterest(month):N2}");
         }
         protected override void AddBalance(double money)
         {
@@ -32,11 +32,11 @@ namespace Exercise08
                 if (month > 12)
                 {
                     month -= 12;
-                    interest = 12 * (this.InterestRate/2) + month*this.InterestRate;                    
+                    interest = 12 * (this.InterestRate/2) * Balance + month*this.InterestRate * Balance;                    
                 }
                 else
                 {
-                    interest = month * (this.InterestRate / 2);
+                    interest = month * (this.InterestRate / 2) * Balance;
                 }
             }
             else
@@ -44,7 +44,7 @@ namespace Exercise08
                 if (month > 6)
                 {
                     month -= 6;
-                    interest = month * this.InterestRate;
+                    interest = month * this.InterestRate * Balance;
                 }
             }
             return interest;

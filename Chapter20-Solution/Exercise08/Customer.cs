@@ -66,6 +66,17 @@ namespace Exercise08
             this.Accounts.Add(account);
             this.Bank.Accounts.Add(account);
         }
+        public void PrintInfo()
+        {
+            Console.WriteLine(this.ToString());
+            Console.WriteLine("-----------------------------------------------------------------------------------");
+            foreach(var a in this.Accounts)
+            {
+                Console.WriteLine(a.ToString());
+            }
+            Console.WriteLine("-----------------------------------------------------------------------------------");
+
+        }
 
         public int CompareTo(Customer other)
         {
@@ -83,6 +94,10 @@ namespace Exercise08
         public override int GetHashCode()
         {
             return this.ID.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return string.Format($"Customer ID: {ID.PadRight(8)} | Customer Type: {Type.ToString().PadRight(7)} | Name: {Name.PadRight(15)}");
         }
     }
 

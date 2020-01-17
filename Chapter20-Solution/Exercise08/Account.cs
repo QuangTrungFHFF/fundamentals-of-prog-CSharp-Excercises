@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercise08
 {
-    class Account
+    public abstract class Account
     {
         public Customer Customer { get; set; }
         public double Balance { get; set; }
@@ -14,11 +14,15 @@ namespace Exercise08
         public Account(Customer customer, double balance,double interestRate, bool deposit, bool withdraw)
         {
             this.Customer = customer;
+            this.Customer.Accounts.Add(this);
             this.Balance = balance;
             this.InterestRate = interestRate;
             this.AllowDeposit = deposit;
             this.AllowWithdraw = withdraw;
         }
+        protected abstract double CalculateInterest(int month);
+        public abstract void PrintInterest(int month);
+        
         
     }
 }

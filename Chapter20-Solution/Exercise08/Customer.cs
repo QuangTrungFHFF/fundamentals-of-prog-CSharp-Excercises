@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Exercise08
 {
@@ -10,6 +9,8 @@ namespace Exercise08
         public string Name { get; private set; }
         public string ID { get; private set; } // ID is unique
         public List<Account> Accounts { get; private set; }
+        public Bank Bank { get; set; }
+
         public Customer(string id, string name, CustomerType type)
         {
             this.Name = name;
@@ -17,49 +18,60 @@ namespace Exercise08
             this.Type = type;
             this.Accounts = new List<Account>();
         }
+
         public void AddAccount(AccountTypes accountTypes, double balance)
         {
-            if(accountTypes == AccountTypes.Deposit)
-            {
-                this.Accounts.Add(new DepositAccount(this, balance));
-            }
-            else if (accountTypes == AccountTypes.Loan)
-            {
-                this.Accounts.Add(new LoanAccount(this, balance));
-            }
-            else if (accountTypes == AccountTypes.Mortgage)
-            {
-                this.Accounts.Add(new MortgageAccount(this, balance));
-            }
-            else
-            {
-                Console.WriteLine("This type of account is not supported by the bank!");
-            }
-        }
-        public void AddAccount(AccountTypes accountTypes,double balance, double interest)
-        {
+            Account account;
             if (accountTypes == AccountTypes.Deposit)
             {
-                this.Accounts.Add(new DepositAccount(this, balance, interest));
+                account = new DepositAccount(this, balance);
             }
             else if (accountTypes == AccountTypes.Loan)
             {
-                this.Accounts.Add(new LoanAccount(this, balance, interest));
+                account = new LoanAccount(this, balance);
             }
             else if (accountTypes == AccountTypes.Mortgage)
             {
-                this.Accounts.Add(new MortgageAccount(this, balance, interest));
+                account = new MortgageAccount(this, balance);
             }
             else
             {
                 Console.WriteLine("This type of account is not supported by the bank!");
+                return;
             }
-        }        
+            this.Accounts.Add(account);
+            this.Bank.Accounts.Add(account);
+        }
+
+        public void AddAccount(AccountTypes accountTypes, double balance, double interest)
+        {
+            Account account;
+            if (accountTypes == AccountTypes.Deposit)
+            {
+                account = new DepositAccount(this, balance,interest);
+            }
+            else if (accountTypes == AccountTypes.Loan)
+            {
+                account = new LoanAccount(this, balance, interest);
+            }
+            else if (accountTypes == AccountTypes.Mortgage)
+            {
+                account = new MortgageAccount(this, balance, interest);
+            }
+            else
+            {
+                Console.WriteLine("This type of account is not supported by the bank!");
+                return;
+            }
+            this.Accounts.Add(account);
+            this.Bank.Accounts.Add(account);
+        }
 
         public int CompareTo(Customer other)
         {
             return this.ID.CompareTo(other.ID);
         }
+
         public override bool Equals(object obj)
         {
             if (this.GetType() != obj.GetType())
@@ -76,6 +88,6 @@ namespace Exercise08
 
     public enum CustomerType
     {
-        Individual,Company
+        Individual, Company
     }
 }

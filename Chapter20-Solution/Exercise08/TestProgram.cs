@@ -6,7 +6,8 @@ namespace Exercise08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var bank = new Bank();
+            bank.AddCustomer("ST001", "Barack Obama", CustomerType.Individual);
         }
     }
 }

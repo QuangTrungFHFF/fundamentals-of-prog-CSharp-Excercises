@@ -2,7 +2,7 @@
 
 namespace Exercise08
 {
-    class Program
+    class TestProgram
     {
         static void Main(string[] args)
         {

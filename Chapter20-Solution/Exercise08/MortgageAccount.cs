@@ -6,13 +6,22 @@ namespace Exercise08
 {
     class MortgageAccount:Account
     {
+        private const double defaultInterest = 0.7 / 100; //(0.7% per month) 
         public MortgageAccount(Customer customer, double balance, double interestRate) : base(customer, balance, interestRate, true, false)
         {
+            this.Types = AccountTypes.Mortgage;
         }
-
+        public MortgageAccount(Customer customer, double balance) : base(customer, balance, defaultInterest, true, false)
+        {
+            this.Types = AccountTypes.Mortgage;
+        }
         public override void PrintInterest(int month)
         {
             Console.WriteLine($"After {month} month, your interest is ${CalculateInterest(month):N2}");
+        }
+        protected override void AddBalance(double money)
+        {
+            this.Balance += money;
         }
 
         protected override double CalculateInterest(int month)

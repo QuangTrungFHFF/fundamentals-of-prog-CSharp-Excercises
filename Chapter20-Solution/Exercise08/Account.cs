@@ -11,6 +11,7 @@ namespace Exercise08
         public double InterestRate { get; set; }
         public bool AllowDeposit { get; private set; }
         public bool AllowWithdraw { get; private set; }
+        public AccountTypes Types { get; internal set; }
         public Account(Customer customer, double balance,double interestRate, bool deposit, bool withdraw)
         {
             this.Customer = customer;
@@ -20,9 +21,14 @@ namespace Exercise08
             this.AllowDeposit = deposit;
             this.AllowWithdraw = withdraw;
         }
+        protected abstract void AddBalance(double money);
         protected abstract double CalculateInterest(int month);
         public abstract void PrintInterest(int month);
         
         
+    }
+    public enum AccountTypes
+    {
+        Deposit,Loan,Mortgage
     }
 }

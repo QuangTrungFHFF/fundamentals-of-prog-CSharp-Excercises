@@ -1,25 +1,53 @@
-## Chapter 13: Strings and TGext Processing
+## Chapter 13: Strings and Text Processing
 This chapter describes different methods for manipulating a text.
 ### List of exercise
 - **Exercise 1:** Describe the strings in C#. What is typical for the string type? Explain which the most important methods of the string class are.
 - **Exercise 2:** Write a program that reads a string, reverse it and prints it to the console. For example: "introduction" -> "noitcudortni".  
   - Solution folder: ReverseString
-- **Exercise 3:** 
-  - Solution folder:
-- **Exercise 4:**
-  - Solution folder:
+- **Exercise 3:** Write a program that checks whether the parentheses are placed correctly in an arithmetic expression. Example of expression with correctly placed brackets: ((a+b)/5-d). Example of an incorrect expression: )(a+b)).
+  - Solution folder: IncorrectExpression
+- **Exercise 4:** 
+  - Solution folder: BackslashSplit
 - **Exercise 5:**
-  - Solution folder:
+  - Solution folder: SubstringCounter
 - **Exercise 6:**
-  - Solution folder:
+  - Solution folder: CasingModifier
 - **Exercise 7:**
-  - Solution folder:
+  - Solution folder: StringOfTwentyCharacters
 - **Exercise 8:**
-  - Solution folder:
+  - Solution folder: StringToUnicodeEscapeSequences
 - **Exercise 9:**
-  - Solution folder:
+  - Solution folder: XOREncrypt
 - **Exercise 10:**
-  - Solution folder:
+  - Solution folder: ExtractSentencesWithParticularWord
 - **Exercise 11:**
-  - Solution folder:
+  - Solution folder: ForbiddenWords
+- **Exercise 12:** 
+  - Solution folder: NumberFormating
+- **Exercise 13:**
+  - Solution folder: URLParse
+- **Exercise 14:**
+  - Solution folder: ReverseSentence
+- **Exercise 15:**
+  - Solution folder: Dictionary
+- **Exercise 16:**
+  - Solution folder: ReplaceHTMLTags
+- **Exercise 17:**
+  - Solution folder: DaysCalculator
+- **Exercise 18:**
+  - Solution folder: DateTimeReader
+- **Exercise 19:**
+  - Solution folder: EmailsFilter
+- **Exercise 20:**
+  - Solution folder: ExtractDate
+- **Exercise 21:**
+  - Solution folder: Palindromes
+- **Exercise 22:**
+  - Solution folder: CharactersCount
+- **Exercise 23:**
+  - Solution folder: WordsCount
+- **Exercise 24:**
+  - Solution folder: RepeatingLetter
+- **Exercise 25:**
+  - Solution folder: ABCSorting
 

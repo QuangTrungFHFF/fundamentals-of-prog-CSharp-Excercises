@@ -26,15 +26,18 @@ Sample source text: "Test". Sample cipher code: "ab". The result should be the f
 - **Exercise 12:** Write a program that reads a number from console and prints it in 15-character field, aligned right in several ways: as a decimal number, hexadecimal number, percentage, currency and exponential (scientific) notation.
   - Solution folder: NumberFormating
 - **Exercise 13:** Write a program that parses an URL in following format:  
-> [protocol]://[server]/[resource]  
+    [protocol]://[server]/[resource]   
 It should extract from the URL the protocol, server and resource parts. For example, when http://www.cnn.com/video is passed, the result is:
-> [protocol]="http"
-> [server]="www.cnn.com"
-> [resource]="/video"
+    [protocol]="http"
+    [server]="www.cnn.com"
+    [resource]="/video"
   - Solution folder: URLParse
-- **Exercise 14:**
+- **Exercise 14:** Write a program that reverses the words in a given sentence without changing punctuation and spaces.  
+For example: "C# is not C++ and PHP is not Delphi"  "Delphi not is PHP and C++ not is C#".
   - Solution folder: ReverseSentence
-- **Exercise 15:**
+- **Exercise 15:** A dictionary is given, which consists of several lines of text. Each line consists of a word and its explanation, separated by a hyphen:  
+    .NET – platform for applications from Microsoft  
+Write a program that parses the dictionary and then reads words from the console in a loop, gives an explanation for it or writes a message on the console that the word is not into the dictionary.
   - Solution folder: Dictionary
 - **Exercise 16:**
   - Solution folder: ReplaceHTMLTags

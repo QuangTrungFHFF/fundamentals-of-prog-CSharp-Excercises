@@ -31,10 +31,10 @@ You can find the questions in the book "Fundamentals of computer programming wit
 - **Exercise 14:** 
   - Solution folder: CircularQueueArray
 - **Exercise 15:** 
-  - Solution folder: CountListedGivenWords
+  - Solution folder: BubbleSortLinkedList
 - **Exercise 16:** 
-  - Solution folder: CountListedGivenWords
+  - Solution folder: DirectoryList
 - **Exercise 17:** 
-  - Solution folder: CountListedGivenWords  
+  - Solution folder: DFSDirectories  
 - **Exercise 18:** 
-  - Solution folder: CountListedGivenWords
+  - Solution folder: MatrixFill

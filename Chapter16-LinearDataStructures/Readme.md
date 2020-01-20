@@ -1,6 +1,6 @@
-## Chapter 15: Text Files
+## Chapter 16: Linear Data Structures
 This chapter describes different methods for manipulating a text.
-You can find the questions in the book "Fundamentals of computer programming with CSharp - Nakov" - chapter 15.
+You can find the questions in the book "Fundamentals of computer programming with CSharp - Nakov" - chapter 16.
 ### List of exercise
 - **Exercise 1:** 
   - Solution folder: SequenceSumAndAverage

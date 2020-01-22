@@ -8,12 +8,25 @@ namespace InterfaceExtension
     {
         private static void Main(string[] args)
         {
-
+            var numbers = new int[] { 2, 5, 63, 21, 4, 58, 96, 74, 10 };
+            numbers.ToConsole();
+            Console.WriteLine($"Sum of all elements: {numbers.Sum():N0}");
+            Console.WriteLine($"Average: {numbers.Average():N2}");
+            Console.WriteLine($"Max: {numbers.Max()}");
+            Console.WriteLine($"Min: {numbers.Min()}");
         }
     }
 
     public static class IEnumerableExtension
     {
+        public static void ToConsole<T>(this IEnumerable<T> elements)
+        {
+            foreach(var e in elements)
+            {
+                Console.Write(e.ToString() + " ");
+            }
+            Console.WriteLine("");
+        }
         public static double Sum<T>(this IEnumerable<T> elements)
             where T : IComparable<T>
         {

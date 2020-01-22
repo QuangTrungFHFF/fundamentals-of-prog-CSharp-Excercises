@@ -35,6 +35,10 @@ namespace StudentLib
             int c = this.Age.CompareTo(that.Age);
             return (a * b * c == 0);
         }
+        public override string ToString()
+        {
+            return string.Format($"{this.FirstName} {this.LastName} - {this.Age}");
+        }
 
         public override int GetHashCode()
         {

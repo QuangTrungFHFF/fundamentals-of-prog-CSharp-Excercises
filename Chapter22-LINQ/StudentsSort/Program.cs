@@ -1,13 +1,13 @@
-﻿using System;
+﻿using StudentLib;
+using System;
 using System.Collections.Generic;
-using StudentLib;
 using System.Linq;
 
 namespace StudentsSort
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var students = new List<Student>() { new Student("Fredrick", "Conley", 16), new Student("Barack", "Obama", 26), new Student("Tyra", "Tang", 17),
                new Student("Aliesha", "Pittman", 16), new Student("Charley", "Shannon", 26), new Student("Zaria", "Toby", 18),new Student("Abby", "Martin", 19),

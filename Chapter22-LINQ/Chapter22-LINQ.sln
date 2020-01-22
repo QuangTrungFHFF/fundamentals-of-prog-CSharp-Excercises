@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student", "Student\Student.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{FE3E5900-CF89-48EE-8087-C8E89C26D992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindStudentWithGivenAgeRange", "FindStudentWithGivenAgeRange\FindStudentWithGivenAgeRange.csproj", "{C70590F9-B314-4C05-9CE6-600FA90B01FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindStudentWithGivenAgeRange", "FindStudentWithGivenAgeRange\FindStudentWithGivenAgeRange.csproj", "{C70590F9-B314-4C05-9CE6-600FA90B01FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentLib", "StudentLib\StudentLib.csproj", "{25BBE624-24C4-48FB-BC5E-230AC51D0164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentLib", "StudentLib\StudentLib.csproj", "{25BBE624-24C4-48FB-BC5E-230AC51D0164}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsSort", "StudentsSort\StudentsSort.csproj", "{40E7718D-0276-40C3-A0E3-41DF6A797AB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{25BBE624-24C4-48FB-BC5E-230AC51D0164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25BBE624-24C4-48FB-BC5E-230AC51D0164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25BBE624-24C4-48FB-BC5E-230AC51D0164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E7718D-0276-40C3-A0E3-41DF6A797AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E7718D-0276-40C3-A0E3-41DF6A797AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E7718D-0276-40C3-A0E3-41DF6A797AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E7718D-0276-40C3-A0E3-41DF6A797AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

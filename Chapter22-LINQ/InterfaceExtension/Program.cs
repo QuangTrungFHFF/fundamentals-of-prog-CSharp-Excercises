@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace InterfaceExtension
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
+
     public static class IEnumerableExtension
     {
         public static double Sum<T>(this IEnumerable<T> elements)
-            where T:IComparable<T>
+            where T : IComparable<T>
         {
             double result = 0;
             try
@@ -27,11 +29,52 @@ namespace InterfaceExtension
             {
                 Console.WriteLine("Element cannot be sum!");
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 Console.WriteLine("Cannot convert string element to default format due to incorrect format!");
             }
-            return result;    
+            return result;
+        }
+
+        public static double Average<T>(this IEnumerable<T> elements)
+            where T : IComparable<T>
+        {
+            int count = 0;
+            foreach (var e in elements)
+            {
+                count++;
+            }
+            double sum = Sum<T>(elements);
+            double result = sum / (double)count;
+            return result;
+        }
+
+        public static T Min<T>(this IEnumerable<T> elements)
+            where T : IComparable<T>
+        {
+            T min = elements.First();
+            foreach (var e in elements)
+            {
+                if (e.CompareTo(min) < 0)
+                {
+                    min = e;
+                }
+            }
+            return min;
+        }
+
+        public static T Max<T>(this IEnumerable<T> elements)
+            where T : IComparable<T>
+        {
+            T max = elements.First();
+            foreach (var e in elements)
+            {
+                if (e.CompareTo(max) > 0)
+                {
+                    max = e;
+                }
+            }
+            return max;
         }
     }
 }

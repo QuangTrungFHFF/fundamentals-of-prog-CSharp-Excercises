@@ -13,14 +13,13 @@ namespace Student.Tests
         public void GetStudentsWithFirstNameBeforeLastNameInAlphabeticallyTest()
         {
             //Arrange
-            var students = new List<Student>() {new Student("Abby","Martin",16), new Student("Barack", "Obama", 26), new Student("Zaria", "Toby", 17)};            
+            var students = new List<Student>() { new Student("Abby", "Martin", 16), new Student("Barack", "Obama", 26), new Student("Zaria", "Toby", 17) };
             var expectedResult = new List<Student>() { new Student("Abby", "Martin", 16), new Student("Barack", "Obama", 26) };
             //Act
             var actualResult = FindStudents.GetStudentsWithFirstNameBeforeLastNameInAlphabetically(students);
             int a = actualResult.Count;
             //Assert            
             CollectionAssert.AreEqual(expectedResult, actualResult);
-
         }
     }
 }

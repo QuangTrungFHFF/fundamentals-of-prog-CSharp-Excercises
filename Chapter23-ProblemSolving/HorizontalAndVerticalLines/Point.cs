@@ -16,7 +16,7 @@ namespace HorizontalAndVerticalLines
         public override bool Equals(object obj)
         {
             var that = (Point)obj;
-            bool isEqual = (this.X.Equals(that.X)) && (this.Y.Equals(that.Y));
+            bool isEqual = ((this.X.Equals(that.X)) && (this.Y.Equals(that.Y)));
             return isEqual ;
         }
         public override int GetHashCode()
@@ -31,7 +31,7 @@ namespace HorizontalAndVerticalLines
         }
         public override string ToString()
         {
-            return string.Format($"({this.X}, {this.Y})");
+            return string.Format($"({this.X},{this.Y})");
         }
     }
 }

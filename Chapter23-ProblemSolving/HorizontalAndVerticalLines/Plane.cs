@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace HorizontalAndVerticalLines
 {
@@ -22,6 +23,11 @@ namespace HorizontalAndVerticalLines
             {
                 this.Points.Remove(point);
             }
+        }
+        private List<Point> SortPointsByX()
+        {
+            var points = this.Points.OrderBy(x => x.X).ToList();
+            return points;
         }
         public void PrintAllPoints()
         {

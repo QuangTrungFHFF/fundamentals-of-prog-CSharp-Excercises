@@ -72,6 +72,51 @@ namespace HorizontalAndVerticalLines
                 }
             }
         }
+        /// <summary>
+        /// Find all horizontal lines which split the plane into two parts,
+        /// each containing equal set of points.
+        /// </summary>
+        public void FindAllHorizontalLines()
+        {
+            if (this.Points.Count < 2)
+            {
+                Console.WriteLine("No line was found!");
+                return;
+            }
+            var points = this.GetSortedListY();
+            int middle = points.Count / 2;
+            if (points.Count % 2 == 0)
+            {
+                if (points[middle] == points[middle - 1])
+                {
+                    if (CheckBalance(points, middle))
+                    {
+                        Console.WriteLine($"Found line y = {points[middle]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No line was found!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"All horizontal lines between y = {points[middle - 1]} and y = {points[middle]}");
+
+                }
+                return;
+            }
+            else
+            {
+                if (CheckBalance(points, middle))
+                {
+                    Console.WriteLine($"Found line y = {points[middle]}");
+                }
+                else
+                {
+                    Console.WriteLine("No line was found!");
+                }
+            }
+        }
 
         private List<int> GetSortedListX()
         {

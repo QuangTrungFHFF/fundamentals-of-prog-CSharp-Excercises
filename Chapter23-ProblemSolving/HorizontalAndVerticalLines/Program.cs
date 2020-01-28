@@ -31,7 +31,7 @@ namespace HorizontalAndVerticalLines
             plane.AddPoint(7, 7);
             plane.FindAllVerticalLines();
 
-
+            
             
         }
     }

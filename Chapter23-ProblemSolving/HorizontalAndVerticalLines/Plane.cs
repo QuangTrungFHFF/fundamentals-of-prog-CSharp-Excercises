@@ -42,27 +42,26 @@ namespace HorizontalAndVerticalLines
             int middle = points.Count / 2;
             if (points.Count % 2 == 0)
             {
-                if (points[middle] == points[middle-1])
+                if (points[middle] == points[middle - 1])
                 {
-                    if(CheckBalance(points,middle))
+                    if (CheckBalance(points, middle))
                     {
-                        Console.WriteLine($"Found line x = {points[middle]}");                        
+                        Console.WriteLine($"Found line x = {points[middle]}");
                     }
                     else
                     {
                         Console.WriteLine("No line was found!");
-                    }                    
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"All vertical lines between x = {points[middle-1]} and x = {points[middle]}");
-                    
+                    Console.WriteLine($"All vertical lines between x = {points[middle - 1]} and x = {points[middle]}");
                 }
                 return;
             }
             else
             {
-                if(CheckBalance(points, middle))
+                if (CheckBalance(points, middle))
                 {
                     Console.WriteLine($"Found line x = {points[middle]}");
                 }
@@ -72,6 +71,7 @@ namespace HorizontalAndVerticalLines
                 }
             }
         }
+
         /// <summary>
         /// Find all horizontal lines which split the plane into two parts,
         /// each containing equal set of points.
@@ -101,7 +101,6 @@ namespace HorizontalAndVerticalLines
                 else
                 {
                     Console.WriteLine($"All horizontal lines between y = {points[middle - 1]} and y = {points[middle]}");
-
                 }
                 return;
             }
@@ -139,19 +138,20 @@ namespace HorizontalAndVerticalLines
             }
             return result;
         }
+
         private bool CheckBalance(List<int> points, int middle)
         {
             int countLeft = 0;
-            for(int i =0;i<middle;i++)
+            for (int i = 0; i < middle; i++)
             {
-                if(points[i]!=points[middle])
+                if (points[i] != points[middle])
                 {
                     countLeft++;
                 }
             }
 
             int countRight = 0;
-            for (int i = points.Count-1; i > middle; i--)
+            for (int i = points.Count - 1; i > middle; i--)
             {
                 if (points[i] != points[middle])
                 {
@@ -160,20 +160,7 @@ namespace HorizontalAndVerticalLines
             }
 
             bool isBalance = countLeft == countRight;
-            return isBalance ;
-        }
-
-        private int CountPointsOnLine(List<int> points, int coordinate)
-        {
-            int count = 0;
-            for (int i = 0; i < points.Count; i++)
-            {
-                if (points[i] == coordinate)
-                {
-                    count++;
-                }
-            }
-            return count;
+            return isBalance;
         }
 
         public void PrintAllPoints()

@@ -31,8 +31,20 @@ namespace HorizontalAndVerticalLines
             plane.AddPoint(7, 7);
             plane.FindAllVerticalLines();
 
-            
-            
+            //Test horizontal line with 12 points (many lines found case)
+            plane.FindAllHorizontalLines();
+
+            //Test horizontal line with 12 points (1 line through 1 point case)
+            plane.AddPoint(3, 0);
+            plane.FindAllHorizontalLines();
+
+            //Test horizontal line with 12 points (1 line through many points case)
+            plane.AddPoint(2, 4);
+            plane.FindAllHorizontalLines();
+
+            //Test horizontal line with 12 points (no possible line case)
+            plane.AddPoint(12, 6);
+            plane.FindAllHorizontalLines();
         }
     }
 }

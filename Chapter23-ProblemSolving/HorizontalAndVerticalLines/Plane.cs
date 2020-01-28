@@ -51,18 +51,25 @@ namespace HorizontalAndVerticalLines
                     else
                     {
                         Console.WriteLine("No line was found!");
-                    }
-                    return;
+                    }                    
                 }
                 else
                 {
                     Console.WriteLine($"All vertical lines between x = {points[middle-1]} and x = {points[middle]}");
-                    return;
+                    
                 }
+                return;
             }
             else
             {
-
+                if(CheckBalance(points, middle))
+                {
+                    Console.WriteLine($"Found line x = {points[middle]}");
+                }
+                else
+                {
+                    Console.WriteLine("No line was found!");
+                }
             }
         }
 

@@ -6,5 +6,6 @@ namespace Permutations
 {
     class Combination
     {
+        private List<int> Ts { get; set; }
     }
 }

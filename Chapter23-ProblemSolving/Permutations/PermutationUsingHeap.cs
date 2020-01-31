@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Permutations
 {
+    /// <summary>
+    /// Permutation without repetition
+    /// </summary>
     public class PermutationUsingHeap
     {
         public static bool ForAllPermutation<T>(T[] items, Func<T[],bool> funcExecuteAndTellIfShouldStop)

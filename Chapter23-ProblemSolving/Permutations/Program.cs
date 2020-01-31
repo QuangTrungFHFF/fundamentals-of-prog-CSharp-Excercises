@@ -8,7 +8,7 @@ namespace Permutations
         static void Main(string[] args)
         {
             PermutationUsingHeap permutation = new PermutationUsingHeap();
-            int[] values = new int[] { 0, 1, 2, 4 };
+            int[] values = new int[] { 0 ,1, 2, 3 };
             PermutationUsingHeap.ForAllPermutation(values, (vals) =>
             {
                 Console.WriteLine(String.Join("", vals));
@@ -17,22 +17,28 @@ namespace Permutations
 
             Console.WriteLine("--------------------------------");
 
+            int[] values2 = new int[] { 0, 1, 2, 3 };
             Combination combination = new Combination();
-            var result = Combination.GetCombinationsWithoutRepetition(3, 4);
-
+            values2.ToConsole();
+            var result = Combination.GetCombinationsWithoutRepetition(values2, 3);
+            
             foreach(var r in result)
             {
-                Console.WriteLine(r.);
+                r.ToConsole();
             }
             
         }
     }
 
-    public static class IENumberableHedlper<T>
+    public static class EnumberableHedlper
     {
-        public static void ToConsole(this IEnumerable<T> ts)
+        public static void ToConsole<T>(this IEnumerable<T> enumerable)
         {
-
-        }
+            foreach(T item in enumerable)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("");
+        }        
     }
 }

@@ -33,6 +33,36 @@ namespace Permutations
             }
         }
 
+        public static List<List<T>> GetCombinationsWithRepetition<T>(List<T> list, int k)
+        {     
+            var combinations = new List<List<T>>();
+
+            if(k == 0)
+            {
+                combinations.Add(new List<T>());
+                return combinations;
+            }
+
+            if(list.Count ==0)
+            {
+                return combinations;
+            }
+
+            T head = list[0];
+            var listClone = new List<T>(list);
+
+            List<List<T>> subcombinations = GetCombinationsWithRepetition(listClone, k - 1);
+
+            foreach(var sub in subcombinations)
+            {
+                sub.Insert(0,head);
+                combinations.Add(sub);
+            }
+
+            list.RemoveAt(0);
+            combinations.AddRange(GetCombinationsWithRepetition(list, k));
+            return combinations;
+        }
 
 
     }

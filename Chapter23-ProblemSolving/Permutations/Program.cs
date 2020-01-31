@@ -27,7 +27,16 @@ namespace Permutations
             {
                 r.ToConsole();
             }
-            
+
+            Console.WriteLine("--------------------------------");
+
+            var list = new List<int>() { 0, 1, 2, 3 };
+            var combinationWithRepetition = Combination.GetCombinationsWithRepetition(list, 3);
+
+            foreach (var r in combinationWithRepetition)
+            {
+                r.ToConsole();
+            }
         }
     }
 

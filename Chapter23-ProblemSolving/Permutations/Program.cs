@@ -21,6 +21,7 @@ namespace Permutations
             Combination combination = new Combination();
             values2.ToConsole();
             var result = Combination.GetCombinationsWithoutRepetition(values2, 3);
+            List<List<int>> save = new List<List<int>>();
             
             foreach(var r in result)
             {
